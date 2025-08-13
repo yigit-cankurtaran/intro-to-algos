@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-#define LENGTH 10
+#define LENGTH 1000
 #define TEST 2
 
 void insertion_sort(int* arr, int length){
@@ -18,7 +19,12 @@ void insertion_sort(int* arr, int length){
     }
 
 int main(){
-  int arr[LENGTH] = {0,2,4,3,9,5,8,7,6,1};
+  int arr[LENGTH];
+
+  for (int i = 0; i < LENGTH; i++){
+    arr[i] = rand();
+  }
+  
   int test_arr[TEST] = {2,1};
 
   printf("array before sorting is:\n");
