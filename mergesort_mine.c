@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include "rand_nums.h"
 
 #define LENGTH 10
-
 
 // void msort(int* arr, int start, int end){
 //   if 
@@ -11,11 +11,6 @@
   
 // }
 
-void rand_nums(int* arr, int len){
-  for (int i = 0; i < len; i++){
-    arr[i] = rand();
-  }
-}
 
 int main(){
   int test[LENGTH];
@@ -24,5 +19,5 @@ int main(){
   for (int i = 0; i < LENGTH; i++){
     printf("num %d before sort is %d\n", i, test[i]);
   }
-  // msort(test, LENGTH);
+  // msort(test, );
 }
