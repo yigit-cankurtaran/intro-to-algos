@@ -27,7 +27,7 @@ void msort(int* arr, int p, int q, int r){
   }
 
   for (int j = 0; j < n2; j++){ // filling right array
-    ra[j] = arr[q + j];
+    ra[j] = arr[q + 1 + j];
     printf("%d of ra currently %d", j, ra[j]);
   }
 
