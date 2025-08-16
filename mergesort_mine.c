@@ -5,7 +5,7 @@
 
 #define LENGTH 10
 
-void msort(int* arr, int p, int q, int r){
+void merge(int* arr, int p, int q, int r){
 // p<=q<r
 // p = start index of the section
 // q = end index of the left half
@@ -51,6 +51,15 @@ void msort(int* arr, int p, int q, int r){
   free(ra);
 }
 
+void msort(int* arr, int left, int right){
+  if (left < right){
+    int mid = left + (right - left) / 2; // to avoid integer overflows.
+
+    msort(arr, left, mid);
+    msort(arr, mid+1, right); // right side starts where left ended+1
+    merge(arr, left, mid, right+1);
+  }
+}
 
 int main(){
   int test[LENGTH];
@@ -59,4 +68,11 @@ int main(){
   for (int i = 0; i < LENGTH; i++){
     printf("num %d before sort is %d\n", i, test[i]);
   }
+
+  msort(test, 0, LENGTH - 1);
+  for (int i = 0; i < LENGTH; i++){
+    printf("num %d after sort is %d\n", i, test[i]);
+  }
+
+  return 0;
 }
