@@ -55,8 +55,11 @@ void msort(int* arr, int left, int right){
   if (left < right){
     int mid = left + (right - left) / 2; // to avoid integer overflows.
 
+    // keep splitting until you have 1 element, recursion makes sure of this
     msort(arr, left, mid);
     msort(arr, mid+1, right); // right side starts where left ended+1
+
+    // compare the 2 elements, put them back together
     merge(arr, left, mid, right+1);
   }
 }
